@@ -161,8 +161,8 @@ static Key keys[] = {
     { MODKEY,                           XK_d,       incnmaster,     {.i = -1 } },
 
     // change m,cfact sizes 
-    { MODKEY|ControlMask,                 XK_h,       setmfact,       {.f = +0.05} },
-    { MODKEY|ControlMask,                 XK_l,       setmfact,       {.f = -0.05} },
+    { MODKEY|ControlMask,                 XK_l,       setmfact,       {.f = +0.05} },
+    { MODKEY|ControlMask,                 XK_h,       setmfact,       {.f = -0.05} },
     { MODKEY|ControlMask,                 XK_o,       setcfact,       {.f =  0.00} },
 
 
