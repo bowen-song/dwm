@@ -147,6 +147,7 @@ static Key keys[] = {
     { MODKEY,                           XK_d,       spawn,          SHCMD("rofi -show run") },
     { MODKEY,                           XK_Return,  spawn,          SHCMD("st")},
     { MODKEY,                           XK_p,       spawn,          SHCMD("rofi-pass -show run")},
+    { MODKEY,                           XK_x,       spawn,          SHCMD("/home/bowen/.config/rofi/powermenu/type-1/powermenu.sh")},
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },
