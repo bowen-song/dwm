@@ -21,13 +21,13 @@ mem() {
 }
 
 clock() {
-	printf "^c$black^ ^b$darkblue^ 󱑆 "
-	printf "^c$black^^b$blue^ $(date '+%H:%M')  "
+  printf "^c$black^ ^b$darkblue^ $(date +'%a %b %d') "
+	printf "^c$black^^b$blue^ $(date +'%r') "
 }
 
 while true; do
 
-  [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
+  [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] 
   interval=$((interval + 1))
 
   sleep 1 && xsetroot -name "$(cpu) $(mem) $(clock)"
