@@ -43,10 +43,14 @@ gpu_util() {
   printf '%s\n' "^c$white^ ^b$grey^ $gpu_util"
 }
 
+volume() {
+  printf "%s\n" "^c#D08770^墳 $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')"
+}
+
 while true; do
 
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] 
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(cpu) $(cpu_util) $(gpu) $(gpu_util) $(mem) $(clock)"
+  sleep 1 && xsetroot -name "$(volume) $(cpu)$(cpu_util) $(gpu)$(gpu_util) $(mem) $(clock)"
 done

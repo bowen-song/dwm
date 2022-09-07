@@ -144,7 +144,7 @@ static Key keys[] = {
     {MODKEY,                            XK_u,       spawn,
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
-    { MODKEY,                           XK_d,       spawn,          SHCMD("rofi -show run") },
+    { MODKEY,                           XK_d,       spawn,          SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,          SHCMD("st")},
     { MODKEY,                           XK_p,       spawn,          SHCMD("rofi-pass -show run")},
     { MODKEY,                           XK_x,       spawn,          SHCMD("/home/bowen/.config/rofi/powermenu/type-1/powermenu.sh")},
