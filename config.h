@@ -84,6 +84,7 @@ static const Rule rules[] = {
     { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
     { "Firefox",  NULL,       NULL,       1 << 8,       0,           1,           -1 },
     { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
+    { "Sonixd",   NULL,       NULL,       4,            0,           1,           -1 },
 };
 
 /* layout(s) */
@@ -162,9 +163,9 @@ static Key keys[] = {
     { MODKEY,                           XK_d,       incnmaster,     {.i = -1 } },
 
     // change m,cfact sizes 
-    { MODKEY|ControlMask,                 XK_l,       setmfact,       {.f = +0.05} },
-    { MODKEY|ControlMask,                 XK_h,       setmfact,       {.f = -0.05} },
-    { MODKEY|ControlMask,                 XK_o,       setcfact,       {.f =  0.00} },
+    { MODKEY|ControlMask,               XK_l,       setmfact,       {.f = +0.05} },
+    { MODKEY|ControlMask,               XK_h,       setmfact,       {.f = -0.05} },
+    { MODKEY|ControlMask,               XK_o,       setcfact,       {.f =  0.00} },
 
 
     { MODKEY|ShiftMask,                 XK_j,       movestack,      {.i = +1 } },
