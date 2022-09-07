@@ -57,7 +57,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static char *tags[] = {"", "", "", ""};
+static char *tags[] = {"", "", "", ""};
 
 static const char* eww[] = { "eww", "open" , "eww", NULL };
 
@@ -84,7 +84,7 @@ static const Rule rules[] = {
     { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
     { "Firefox",  NULL,       NULL,       1 << 8,       0,           1,           -1 },
     { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
-    { "Sonixd",   NULL,       NULL,       5,            0,           1,           -1 },
+    { "Sonixd",   NULL,       NULL,       4,            0,           1,           -1 },
 };
 
 /* layout(s) */
