@@ -52,5 +52,5 @@ while true; do
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] 
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(volume) $(cpu)$(cpu_util) $(gpu)$(gpu_util) $(mem) $(clock)"
+  sleep 1 && xsetroot -name "$(cpu)$(cpu_util) $(gpu)$(gpu_uil) $(mem) $(volume) $(clock)"
 done

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-feh --bg-fill ~/Wallpapers/big-sur.jpg &
+feh --bg-fill ~/Wallpapers/rhombuses.png &
 xset r rate 250 80 &
 echo "Xft.dpi: 192" | xrdb -merge &
 redshift -l 30:-95 &
