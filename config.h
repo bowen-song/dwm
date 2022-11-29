@@ -31,6 +31,11 @@ static const int colorfultag        = 1;        /* 0 means use SchemeSel for sel
 #define ICONSIZE 19   /* icon size */
 #define ICONSPACING 8 /* space between icon and title */
 
+// defining media keys
+static const char *medplaypausecmd[] = { "playerctl", "play-pause", NULL };
+static const char *mednextcmd[] = { "playerctl", "next", NULL };
+static const char *medprevcmd[] = { "playerctl", "previous", NULL };
+
 static const char *fonts[]          = {"JetBrainsMono Nerd Font:style:medium:size=11",
                                         "Material Design Icons Desktop:size=11" };
 
@@ -137,8 +142,9 @@ static Key keys[] = {
     {0,                     XF86XK_AudioMute,       spawn,          SHCMD("pamixer -t")},
     {0,              XF86XK_AudioRaiseVolume,       spawn,          SHCMD("pamixer -i 5")},
     {0,              XF86XK_AudioLowerVolume,       spawn,          SHCMD("pamixer -d 5")},
-    {0,              XF86XK_MonBrightnessDown,      spawn,          SHCMD("xbacklight -dec 5")},
-    {0,              XF86XK_MonBrightnessUp,        spawn,          SHCMD("xbacklight -inc 5")},
+    {0,              XF86XK_AudioPlay,              spawn,          {.v = medplaypausecmd}  },
+    {0,              XF86XK_AudioNext,              spawn,          {.v = mednextcmd}  },
+    {0,              XF86XK_AudioPrev,              spawn,          {.v = medprevcmd}  },
 
     // screenshot fullscreen and cropped
     {MODKEY|ControlMask,                XK_u,       spawn,
