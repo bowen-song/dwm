@@ -3,7 +3,7 @@
 # ^c$var^ = fg color
 # ^b$var^ = bg color
 
-interval=0
+# interval=0
 
 # load colors
 . ~/.config/chadwm/scripts/bar_themes/catppuccin
@@ -47,10 +47,33 @@ volume() {
   printf "%s\n" "^c#D08770^墳 $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')"
 }
 
+cider() {
+  if ps -C cider > /dev/null; then
+    PLAYER="cider"
+  fi
+
+  if [ "$PLAYER" = "cider" ]; then
+    ARTIST=$(playerctl metadata artist)
+    TRACK=$(playerctl metadata title)
+    STATUS=$(playerctl status)
+
+    if [ "$STATUS" = "Playing" ]; then
+                STATUS="▶"
+            else
+                STATUS=""
+            fi
+
+  if [ "$PLAYER" = "cider" ]; then
+    printf  "^c$white^ ^b$grey^ $STATUS $ARTIST - $TRACK"
+  fi
+
+  fi
+}
+
 while true; do
 
-  [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] 
-  interval=$((interval + 1))
-
-  xsetroot -name "$(cpu)$(cpu_util) $(gpu)$(gpu_uil) $(mem) $(volume) $(clock)"
+#  [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] 
+#  interval=$((interval + 1))
+  xsetroot -name "$(cider) $(cpu)$(cpu_util) $(gpu)$(gpu_util) $(mem) $(volume) $(clock)"
+  sleep 1
 done
